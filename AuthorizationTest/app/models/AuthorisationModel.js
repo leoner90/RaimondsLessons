@@ -73,7 +73,7 @@ class AuthorisationModel {
         errors.push("login Or Password is incorrect");
       }
     }
-    // IF NO ERRORS -> ATTEMPT TO REGISTER USER
+    // IF NO ERRORS -> Log in
     if(errors.length == 0) {
       //ASSIGN PUBLIC KEY AND USER ID TO SESSION AND PRIVATE KEY TO DATABASE, ALSO USER DATA TO JWT 
       await this.AssignPrivateAndPublicKey(user.login,  DbUserData[0].Email , DbUserData[0].id_User , req);
