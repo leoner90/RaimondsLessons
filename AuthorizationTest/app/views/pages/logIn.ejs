@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head"); %>
+<body>
+  <div class="header">
+    <%- include("../partials/navigation") %>
+  </div>
+  <div class="page-wrapper">
+    <h1 class="page-header">LOG IN PAGE</h1>
+    <hr>
+    <div class="error">
+      <% if (typeof Error == 'object') { %>
+        <% Error.map(Error => { %>
+          <%= Error  %> <br>
+        <% }) %> 
+      <% } %>
+    </div>
+    <form class="form-control" action="/login" method="POST">
+      <div>
+        <input name="login" type="text" placeholder="login"/>
+      </div>
+      <div>
+        <input name="password" type="password" placeholder="password"/>
+      </div>
+      <button class="btn btn-success">LOG IN</button>
+    </form>
+  </div>
+</body>
+</html>
